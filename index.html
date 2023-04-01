@@ -1,35 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>（问心-网站导航）heartmv.com</title>
+	<title>输入密码</title>
+	<script>
+		function checkPassword() {
+			var password = document.getElementById("password").value;
+			if (password == "mypassword") {
+				window.location.href = "welcome.html";
+			} else {
+				document.getElementById("message").innerHTML = "再见";
+			}
+		}
+	</script>
 </head>
-
 <body>
-<script src="psw.js"></script><!--密码定义在 psw.js 里面-->
-<script>
-	function password() {		
-		var testV = 1;//计数器，记录密码错误次数
-		var psw = prompt("网站全新升级！请输入密码：(没密码？访问：heartmv.com)","");
-		while (testV < 3) {
-			if (!psw){
-				history.go(-1);//密码错误返回上一页
-			}
-			if (psw == xx) {
-				location.href="index2.html";//密码正确，跳到指定页面
-				break;
-			}
-			testV+=1;
-			psw=prompt("网站全新升级！请输入密码：(没密码？访问：heartmv.com)","");
-		}
-		if (psw!=xx && testV ==3){
-			alert("错错错！！！，请刷新重新输入密码");//密码输入错误达到3次
-		}
-			return " ";
-	}
-	
-	password();
-
-</script>
+	<h1>请输入密码</h1>
+	<form>
+		<label for="password">密码：</label>
+		<input type="password" id="password" name="password">
+		<button type="button" onclick="checkPassword()">提交</button>
+	</form>
+	<p id="message"></p>
 </body>
 </html>
